@@ -9,7 +9,7 @@ seight = ones(2,2,10);
 teight  = ones(4,16,10);
 
 for a = 1:10
-    eight(:,:,a) = f8(:,(1+16*(a-1)):(16+16*(a-1)));
+    eight(:,:,a) = f32(:,(1+16*(a-1)):(16+16*(a-1)));
     meight(:,a) = mean(eight(1:2,:,a)')';
     seight(:,:,a) = cov(eight(1:2,:,a)');
     teight(:,:,a) = f8t(:,(1+16*(a-1)):(16+16*(a-1)));
@@ -27,4 +27,7 @@ for a = 1:256
     end
 end
 
+figure(1);
+imagesc(multim);
+figure(2);
 imagesc(cimage);
