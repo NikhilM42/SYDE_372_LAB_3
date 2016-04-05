@@ -87,15 +87,25 @@ erroreight = errortwo;
 errorthirtytwo = errortwo;
 
 for a = 1:10
-    errortwo(a) = (sum(truthtabletwobytwo(a,:))-truthtabletwobytwo(a,a))/16;
-    erroreight(a) = (sum(truthtableeightbyeight(a,:))-truthtableeightbyeight(a,a))/16;
-    errorthirtytwo(a) = (sum(truthtablethirtytwobythirtytwo(a,:))-truthtablethirtytwobythirtytwo(a,a))/16;
+    errortwo(a) = 100*((sum(truthtabletwobytwo(a,:))-truthtabletwobytwo(a,a))/16);
+    erroreight(a) = 100*((sum(truthtableeightbyeight(a,:))-truthtableeightbyeight(a,a))/16);
+    errorthirtytwo(a) = 100*((sum(truthtablethirtytwobythirtytwo(a,:))-truthtablethirtytwobythirtytwo(a,a))/16);
 end
 
 avgerrortwo = mean(errortwo);
 avgerroreight = mean(erroreight);
 avgerrorthirtytwo = mean(errorthirtytwo);
 
+finaltabletwo = [[truthtabletwobytwo,errortwo];[zeros(1,10),avgerrortwo]];
+finaltableeight = [[truthtableeightbyeight,erroreight];[zeros(1,10),avgerroreight]];
+finalttablethirtytwo = [[truthtablethirtytwobythirtytwo,errorthirtytwo];[zeros(1,10),avgerrorthirtytwo]];
+
+fprintf('2x2 Final Table\n');
+fprintf('%2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.2f\n',finaltabletwo');
+fprintf('\n8x8 Final Table\n');
+fprintf('%2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.2f\n',finaltableeight');
+fprintf('\n32x32 Final Table\n');
+fprintf('%2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.0f %2.2f\n',finalttablethirtytwo');
 
 
 

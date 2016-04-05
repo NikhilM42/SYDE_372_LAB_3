@@ -2,16 +2,6 @@ clc;
 clear;
 
 load feat.mat;
-% figure(1);
-% aplot(f2);
-% title('Features For 2x2 Block');
-% figure(2);
-% aplot(f8);
-% title('Features For 8x8 Block');
-% figure(3);
-% aplot(f32);
-% title('Features For 32x32 Block');
-
 two = ones(4,16,10);
 eight = two;
 thirtytwo = two;
@@ -102,5 +92,12 @@ for a = 1:10
     errorthirtytwo(a) = (sum(truthtablethirtytwobythirtytwo(a,:))-truthtablethirtytwobythirtytwo(a,a))/16;
 end
 
-avgerrortwo = 
+avgerrortwo = mean(errortwo);
+avgerroreight = mean(erroreight);
+avgerrorthirtytwo = mean(errorthirtytwo);
+
+finaltabletwo = [truthtabletwobytwo,errortwo;zeros(]
+finaltableeight = 
+finalttablethirtytwo = 
+
 
