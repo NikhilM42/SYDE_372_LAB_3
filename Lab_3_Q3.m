@@ -10,10 +10,6 @@ mtwo = ones(2,16,10);
 meight = mtwo;
 mthirtytwo = mtwo;
 
-mtwo = ones(2,16,10);
-meight = mtwo;
-mthirtytwo = mtwo;
-
 stwo = ones(2,2,10);
 seight = stwo;
 sthirtytwo = stwo;
